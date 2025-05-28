@@ -1,0 +1,13 @@
+name: QCFractal
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - psi4
+  - postgresql
+  - pip
+  - pip:
+    - qcfractal
+    - qcportal
+    - qcfractalcompute
+    - geometric

@@ -3,7 +3,7 @@ import numpy as np
 
 
 # Connecting to the server
-client = ptl.PortalClient('https://address', verify=False, username = 'usrname', password= 'password', cache_dir='./')
+client = ptl.PortalClient('https://nebtest.qcarchive.molssi.org', verify=False, cache_dir='./')
 
 
 # Printing all the available datasets
@@ -12,7 +12,7 @@ print(client.list_datasets_table())
 
 # RGD1 dataset 
 ds = client.get_dataset('neb',
-                        dataset_name='neb_RGD_commit4',
+                        dataset_name='NEB_RGD',
                         )
 
 
@@ -49,7 +49,8 @@ neb_sps= neb_rec.singlepoints
 sp = final_sps[0] # The SP record of the first frame from the last chain
 print('\nGradients from a Singlepoint record: ')
 print(sp.return_result) # Printing gradients. 
-print('Full Singlepoint record: ')
+
+print('\nFull Singlepoint record: ')
 print(sp.to_qcschema_result) # Printing more details of the record
 
 for sp1, sp2 in zip(final_chain, final_sps):
@@ -88,7 +89,7 @@ optimized_TS = ts_traj[-1] # Singlepoint record of the optimized TS structure
 # Hessian of the optimized TS structure
 
 ds_hessian = client.get_dataset('singlepoint',
-                                dataset_name='Hessian_commit4',
+                                dataset_name='NEB_Hessian',
                                 )
 hessian_rec = ds_hessian.get_record('0000_A_b','b3lyp')
 

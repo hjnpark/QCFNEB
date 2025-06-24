@@ -5,5 +5,5 @@ This repository is part of the Supplemental Information for [link to the publica
 ## Setup Instructions
 1. Clone this repository.
 2. Use the provided YAML file to configure the environment (e.g., with `conda env create -f QCFractal.yaml`).
-3. Activate the environment and run the Python scripts or Jupyter notebooks.
+3. Activate the environment and run the Python script or Jupyter notebook.
 
